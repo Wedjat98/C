@@ -7,7 +7,7 @@ int main(void)
 
    x = input_data();
    y = input_data();
-   fprintf(stderr, "Inputed Data are %d and %d\n", x, y);
+   fprintf(stderr, "入力した数字は%d と %d\n", x, y);
 
    z = GCD(x, y);
 
