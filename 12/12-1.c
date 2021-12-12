@@ -1,24 +1,25 @@
 #include <stdio.h>
-#include <string.h>
 typedef struct Person
 {
     int age;
     int height;
-    int weight
+    int weight;
 } Person;
+void pin(Person *ptr);
+void pout(Person p);
 
 int main()
 {
     Person person;
-    pin(person);
+    pin(&person);
     pout(person);
 }
 void pin(Person *ptr)
 {
-    printf("Please input age heigh weight: ");
-    scanf("%d%d%d", &(ptr)->age,  &(ptr)->height, &(ptr)->weight);
+    printf("年齢、身長、体重を入力してください: ");
+    scanf("%d%d%d", &ptr->age, &ptr->height, &ptr->weight);
 }
 void pout(Person p)
 {
-    printf("age heigh weight%d%d%d", &p.age, &p.height, &p.weight);
+    printf("年齢、身長、体重は%d、%d、%d", p.age, p.height, p.weight);
 }
