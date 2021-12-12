@@ -1,27 +1,24 @@
 #include <stdio.h>
 #include <string.h>
-
+void pin(Person *ptr)
+{
+    printf("Please input age heigh weight: ");
+    scanf("%d%d%d", &*ptr.age,&*ptr.height,&*ptr.weight);
+}
+void pout(Person p)
+{
+    printf("%d%d%d", &p.age,&p.height,&p.weight);
+}
 struct Person
 {
-    char name[50];
     int age;
-    char gender;
+    int height;
+    int weight
 };
 
 int main()
 {
     struct Person person;
-    strcpy_s(
-        person.name,
-        sizeof(person.name) - 1,
-        "○山×男");
-    person.age = 20;
-    person.gender = 0;
-    
-    printf(
-        "name: %s\n"
-        "age: %d\n"
-        "gender: %d\n",
-        person.name, person.age, person.gender);
-    getchar();
-}`
+    pin(person);
+    pout(person);
+}
